@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-/*
- * function_name - hello
+/**
+ * main - hello
+ * Return: yes
  */
 int main(void)
 {
