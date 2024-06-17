@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
- * hello
+ * function_name - hello
  */
 int main(void)
 {
