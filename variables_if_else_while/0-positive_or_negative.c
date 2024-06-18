@@ -4,6 +4,7 @@
 
 /**
  * main - y
+ * Return: yes
  */
 int main(void)
 {
