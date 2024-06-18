@@ -8,7 +8,7 @@ int main(void)
 {
 int n;
 
-srand(time(NULL));
+srand(time(0));
 
 n = rand();
 
@@ -24,4 +24,6 @@ else
 {
 printf("%d is negative\n", n);
 }
+
+return (0);
 }
