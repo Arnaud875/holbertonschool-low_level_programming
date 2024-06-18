@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void jack_bauer(void);
 int _abs(int);
 int _putchar(char);
 void print_alphabet(void);
