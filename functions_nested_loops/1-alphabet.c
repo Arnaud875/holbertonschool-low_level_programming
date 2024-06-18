@@ -7,18 +7,8 @@ char a;
 
 for (a = 'a'; a <= 'z'; a++)
 {
-putchar(a);
+_putchar(a);
 }
 
-putchar('\n');
-}
-
-/**
- * main - y
- * Return: yes
- */
-int main(void)
-{
-print_alphabet();
-return (0);
+_putchar('\n');
 }
