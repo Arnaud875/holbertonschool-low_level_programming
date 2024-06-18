@@ -7,12 +7,11 @@
  */
 int main(void)
 {
-const char *a = "abcdefghijklmnopqrstuvwxyz";
-size_t i;
+char a;
 
-for (i = 0; i < strlen(a); i++)
+for (a = 'a'; a <= 'z'; a++)
 {
-putchar(a[i]);
+putchar(a);
 }
 
 putchar('\n');
