@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
-void print_alphabet(void);
+#include "main.h"
 
 /**
  * print_alphabet - y
