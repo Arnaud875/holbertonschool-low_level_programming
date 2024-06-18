@@ -21,5 +21,4 @@ _putchar(a);
 _putchar('\n');
 }
 
-_putchar('\n');
 }
