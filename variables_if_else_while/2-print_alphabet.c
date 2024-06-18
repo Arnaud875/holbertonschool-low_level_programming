@@ -8,9 +8,11 @@
 int main(void)
 {
 const char *a = "abcdefghijklmnopqrstuvwxyz\n";
-for (char c = 0; c < strlen(a); c++)
+size_t i;
+
+for (i = 0; i < strlen(a); i++)
 {
-putchar(a[c]);
+putchar(a[i]);
 }
 
 return (0);
