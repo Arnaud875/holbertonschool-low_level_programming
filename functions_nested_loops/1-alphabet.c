@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+void print_alphabet(void);
+
 /**
  * print_alphabet - y
  * Return: v
@@ -11,8 +13,8 @@ char a;
 
 for (a = 'a'; a <= 'z'; a++)
 {
-_putchar(a);
+putchar(a);
 }
 
-_putchar('\n');
+putchar('\n');
 }
