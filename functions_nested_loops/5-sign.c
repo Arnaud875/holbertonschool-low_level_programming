@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_sign - y
  * @n: number of yes
