@@ -15,13 +15,13 @@ for (j = 0; j < 10; j++)
 r = (i * j);
 if (r > 9)
 {
-putchar(r / 10 + '0');
+_putchar(r / 10 + '0');
 }
-putchar(r % 10 + '0');
+_putchar(r % 10 + '0');
 
-putchar(',');
-putchar(' ');
+_putchar(',');
+_putchar(' ');
 }
-putchar('\n');
+_putchar('\n');
 }
 }
