@@ -16,28 +16,28 @@ r = (i * j);
 
 if (j != 0)
 {
-putchar(' ');
+_putchar(' ');
 if (r < 10)
 {
-putchar(' ');
+_putchar(' ');
 }
 }
 
 if (r > 9)
 {
-putchar(r / 10 + '0');
+_putchar(r / 10 + '0');
 }
 else
 {
-putchar(' ');
+_putchar(' ');
 }
-putchar(r % 10 + '0');
+_putchar(r % 10 + '0');
 
 if (j < 9)
 {
-putchar(',');
+_putchar(',');
 }
 }
-putchar('\n');
+_putchar('\n');
 }
 }
