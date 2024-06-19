@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void print_to_98(int);
 int add(int, int);
 void times_table(void);
 int print_last_digit(int);
