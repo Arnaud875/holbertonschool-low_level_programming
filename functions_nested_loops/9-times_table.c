@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main."
 
 /**
  * times_table - yes
@@ -13,18 +13,31 @@ for (i = 0; i < 10; i++)
 for (j = 0; j < 10; j++)
 {
 r = (i * j);
+
+if (j != 0)
+{
+putchar(' ');
+if (r < 10)
+{
+putchar(' ');
+}
+}
+
 if (r > 9)
 {
-_putchar(r / 10 + '0');
+putchar(r / 10 + '0');
 }
-_putchar(r % 10 + '0');
+else
+{
+putchar(' ');
+}
+putchar(r % 10 + '0');
 
 if (j < 9)
 {
-_putchar(',');
-_putchar(' ');
+putchar(',');
 }
 }
-_putchar('\n');
+putchar('\n');
 }
 }
