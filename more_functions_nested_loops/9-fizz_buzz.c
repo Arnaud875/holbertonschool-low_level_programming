@@ -12,7 +12,8 @@ int main(void)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			printf("%s ", (i % 15 == 0) ? "FizzBuzz" : (i % 3 == 0) ? "Fizz" : "Buzz");
+			printf("%s", (i % 15 == 0) ? "FizzBuzz" : (i % 3 == 0) ? "Fizz" : "Buzz");
+			printf("%s", i < 100 ? " " : "\n");
 			continue;
 		}
 
