@@ -7,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int i, j;
+	int j;
+	unsigned int i;
 
 	i = 0;
 	j = 1;
@@ -22,12 +23,10 @@ int _atoi(char *s)
 			i = 0;
 			while (*s >= '0' && *s <= '9')
 			{
-				if (*s == '-')
-					j *= -1;
 				i = (i * 10) + (*s - '0');
 				s++;
 			}
-			return ((j != -1) ? i : -i);
+			return (i * j);
 		}
 
 		s++;
