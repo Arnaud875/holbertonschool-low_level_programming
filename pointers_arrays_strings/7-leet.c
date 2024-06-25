@@ -7,7 +7,7 @@
  */
 char *leet(char *str)
 {
-	int i, l, t;
+	int i, t;
 	char *temp;
 
 	char table[][3] = {
@@ -19,7 +19,6 @@ char *leet(char *str)
 	};
 
 	i = 0;
-	l = 0;
 	temp = str;
 
 	while (*temp)
