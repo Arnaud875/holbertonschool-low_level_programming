@@ -13,6 +13,8 @@ char *string_toupper(char *str)
 		{
 			*str -= 32;
 		}
+
+		_putchar(*str);
 		str++;
 	}
 
