@@ -7,7 +7,15 @@
  */
 char *leet(char *str)
 {
-	int i, l;
+	int i, l, t;
+
+	char table[][3] = {
+		{ 'a', 'A', '4' },
+		{ 'e', 'E', '3' },
+		{ 'o', 'O', '0' },
+		{ 't', 'T', '7' },
+		{ 'l', 'L', '1' },
+	};
 
 	i = 0;
 	l = 0;
@@ -17,16 +25,11 @@ char *leet(char *str)
 
 	for (i = 0; i < l; i++)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
-			str[i] = '4';
-		else if (str[i] == 'e' || str[i] == 'E')
-			str[i] = '3';
-		else if (str[i] == 'o' || str[i] == 'O')
-			str[i] = '0';
-		else if (str[i] == 't' || str[i] == 'T')
-			str[i] = '7';
-		else if (str[i] == 'l' || str[i] == 'L')
-			str[i] = '1';
+		for (t = 0; t < 5; t++)
+		{
+			if (str[i] == table[t][0] || str[i] == table[t][1])
+				str[i] = table[t][2];
+		}
 	}
 
 	return (str);
