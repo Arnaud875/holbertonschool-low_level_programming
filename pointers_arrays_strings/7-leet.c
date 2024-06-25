@@ -8,6 +8,7 @@
 char *leet(char *str)
 {
 	int i, l, t;
+	char *temp;
 
 	char table[][3] = {
 		{ 'a', 'A', '4' },
@@ -19,17 +20,17 @@ char *leet(char *str)
 
 	i = 0;
 	l = 0;
+	temp = str;
 
-	while (str[i++])
-		l++;
-
-	for (i = 0; i < l; i++)
+	while (*temp)
 	{
 		for (t = 0; t < 5; t++)
 		{
-			if (str[i] == table[t][0] || str[i] == table[t][1])
-				str[i] = table[t][2];
+			if (temp[i] == table[t][0] || temp[i] == table[t][1])
+				temp[i] = table[t][2];
 		}
+
+		temp++;
 	}
 
 	return (str);
