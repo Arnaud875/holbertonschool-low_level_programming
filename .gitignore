@@ -6,3 +6,6 @@
 
 # Ignore Unity build directory
 /tests/Unity
+
+# Ignore test binaries
+/tests/build
