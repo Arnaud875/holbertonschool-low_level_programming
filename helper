@@ -27,7 +27,7 @@ compile_and_check() {
             gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
                 "$FILE_PATH" -o output
 
-            ./output 0 hello, world
+            ./output 31784671 e f e 23
         else
             echo "Compiling test file($TEST_FILE) ..."
 
