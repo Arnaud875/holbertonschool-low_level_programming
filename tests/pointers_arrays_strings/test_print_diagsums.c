@@ -27,8 +27,14 @@ void test_print_diagsums_function(void)
 			{10, 12401, 10452, 11542545, 1214543435},
 	};
 
+	int c2[2][2] = {
+			{11, 10},
+			{12, 30},
+	};
+
 	print_diagsums(&c3[0][0], 3);
 	print_diagsums(&c5[0][0], 5);
+	print_diagsums(&c2[0][0], 2);
 
 	/* Pas besoin de faire de test */
 }
