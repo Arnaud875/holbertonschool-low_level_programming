@@ -23,7 +23,7 @@ compile_and_check() {
 
         # Compile the Unity test file
         gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
-            "$FILE_PATH" "$TEST_FILE" -o "$BUILD_DIR/test_${TEST_FILE_BASE%.c}" -I "$TEST_DIR/Unity/src" -L "$TEST_DIR/Unity/build" -lunity
+            "$TEST_DIR/_putchar.c" "$FILE_PATH" "$TEST_FILE" -o "$BUILD_DIR/test_${TEST_FILE_BASE%.c}" -I "$TEST_DIR/Unity/src" -L "$TEST_DIR/Unity/build" -lunity
 
          if [ $? -eq 0 ]; then
             echo "Running tests..."

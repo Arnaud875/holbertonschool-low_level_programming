@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strstr - t
- * @haystack: t
- * @needle: t
- * Return: t
+ * _strstr - Find the first occurrence of substring
+ * @haystack: The source
+ * @needle: The substring
+ * Return: Return the position of the first occurrence of the substring
  */
 char *_strstr(char *haystack, char *needle)
 {
