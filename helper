@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Directory where the files are located
+DIR_PATH="pointers_arrays_strings"
+TEST_DIR="tests"
+
+# Function to check with Betty, and test with Unity
+compile_and_check() {
+    FILE_NAME=$1
+    FILE_PATH="$DIR_PATH/$FILE_NAME"
+
+    # Remove numeric prefix for the test file
+    TEST_FILE_BASE=$(echo "$FILE_NAME" | sed 's/^[0-9]*-//')
+    TEST_FILE="$TEST_DIR/$DIR_PATH/test_$TEST_FILE_BASE"
+    
+    echo "Running betty..."
+    betty $FILE_PATH
+
+    if [ $? -eq 0 ]; then
+        echo "Betty successfully"
+        echo "Compiling test file($TEST_FILE) ..."
+
+        # Compile the Unity test file
+        gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
+            "$FILE_PATH" "$TEST_FILE" -o test_output -I "$TEST_DIR/Unity/src" -L "$TEST_DIR/Unity/build" -lunity
+
+         if [ $? -eq 0 ]; then
+            echo "Running tests..."
+            ./test_output
+        else
+            echo "Test compilation failed."
+            exit 1
+        fi
+    fi
+}
+
+# Function to push changes to GitHub
+push_to_github() {
+    git add .
+    git commit -m "$DIR_PATH"
+    git push
+}
+
+# Main script logic
+if [ $# -eq 1 ]; then
+    compile_and_check "$1"
+else
+    push_to_github
+fi
