@@ -25,6 +25,8 @@ void test_print_chessboard_function(void)
 			{'R', 'K', 'B', 'Q', 'K', 'B', 'K', 'R'},
 	};
 	print_chessboard(board);
+
+	/* Pas besoin de faire de test */
 }
 
 int main(void)
