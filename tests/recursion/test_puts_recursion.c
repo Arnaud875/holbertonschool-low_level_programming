@@ -14,7 +14,7 @@ void tearDown(void)
 
 void test_puts_recursion_basic(void)
 {
-	_puts_recursion("Puts with recursion\n");
+	_puts_recursion("Puts with recursion");
 	TEST_ASSERT_EQUAL_STRING("Puts with recursion\n", get_buffer());
 }
 
