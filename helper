@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory where the files are located
-DIR_PATH="pointers_arrays_strings"
+DIR_PATH="recursion"
 TEST_DIR="tests"
 BUILD_DIR="$TEST_DIR/build"
 

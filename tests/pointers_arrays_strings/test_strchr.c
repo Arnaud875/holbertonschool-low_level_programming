@@ -67,7 +67,7 @@ void test_strchr_null_char(void)
 	TEST_ASSERT_NULL(result);
 
 	result = _strchr(str, '\0');
-	TEST_ASSERT_NULL(result);
+	TEST_ASSERT_EQUAL_STRING(result, "");
 
 	result = _strchr(str, 'W');
 	TEST_ASSERT_EQUAL_STRING(result, "World!");
