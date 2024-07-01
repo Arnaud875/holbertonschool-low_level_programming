@@ -12,22 +12,18 @@ void tearDown(void)
 	/* Teardown code, if needed */
 }
 
-void test_memset_function(void)
+void test_memcpy_function(void)
 {
-	int i = 0;
-
 	char dest[50];
-	_memset(dest, 'A', sizeof(dest));
+	char src[] = "hello world!";
 
-	for (; i < (int)sizeof(dest); i++)
-	{
-		TEST_ASSERT_EQUAL_HEX8('A', dest[i]);
-	}
+	_memcpy(dest, src, sizeof(src));
+	TEST_ASSERT_EQUAL_STRING(dest, src);
 }
 
 int main(void)
 {
 	UNITY_BEGIN();
-	RUN_TEST(test_memset_function);
+	RUN_TEST(test_memcpy_function);
 	return UNITY_END();
 }
