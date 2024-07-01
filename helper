@@ -3,6 +3,7 @@
 # Directory where the files are located
 DIR_PATH="pointers_arrays_strings"
 TEST_DIR="tests"
+BUILD_DIR="$TEST_DIR/build"
 
 # Function to check with Betty, and test with Unity
 compile_and_check() {
@@ -22,16 +23,37 @@ compile_and_check() {
 
         # Compile the Unity test file
         gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
-            "$FILE_PATH" "$TEST_FILE" -o "$TEST_DIR/build/test_${TEST_FILE_BASE%.c}" -I "$TEST_DIR/Unity/src" -L "$TEST_DIR/Unity/build" -lunity
+            "$FILE_PATH" "$TEST_FILE" -o "$BUILD_DIR/test_${TEST_FILE_BASE%.c}" -I "$TEST_DIR/Unity/src" -L "$TEST_DIR/Unity/build" -lunity
 
          if [ $? -eq 0 ]; then
             echo "Running tests..."
-            ./"$TEST_DIR/build/test_${TEST_FILE_BASE%.c}"
+            ./"$BUILD_DIR/test_${TEST_FILE_BASE%.c}"
         else
             echo "Test compilation failed."
             exit 1
         fi
     fi
+}
+
+# Function to run all tests in the build directory
+run_all_tests() {
+    echo "Running all tests in $BUILD_DIR..."
+    count=0
+    
+    for test_file in "$BUILD_DIR"/*; do
+        if [ -x "$test_file" ]; then
+            echo "[$count] - Running $(basename "$test_file")"
+            "$test_file"
+            
+            if [ $? -ne 0 ]; then
+                echo "Test $(basename "$test_file") failed."
+                exit 1
+            fi
+            count=$((count + 1))
+        fi
+    done
+
+    echo "All tests passed successfully."
 }
 
 # Function to push changes to GitHub
@@ -43,7 +65,11 @@ push_to_github() {
 
 # Main script logic
 if [ $# -eq 1 ]; then
-    compile_and_check "$1"
+    if [ $1 == "all_tests" ]; then
+        run_all_tests
+    else
+        compile_and_check "$1"
+    fi
 else
     push_to_github
 fi
