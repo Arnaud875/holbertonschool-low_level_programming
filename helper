@@ -27,7 +27,7 @@ compile_and_check() {
             gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
                 "$FILE_PATH" -o output
 
-            ./output 2 44
+            ./output 2 4,4
         else
             echo "Compiling test file($TEST_FILE) ..."
 
