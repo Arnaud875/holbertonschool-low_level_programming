@@ -2,7 +2,7 @@
 .vscode/
 
 # Ignore test binaries
-/test_output
+/output
 
 # Ignore Unity build directory
 /tests/Unity

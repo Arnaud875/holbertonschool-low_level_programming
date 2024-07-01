@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - Print the program name
+ * main - Print the number arguments
  * @argc: number of arguments
  * @argv: command line arguments
  * Return: 0 if successful
  */
-int main(__attribute__((unused)) int argc, char **argv)
+int main(int argc, __attribute__((unused)) char **argv)
 {
-	printf("%s\n", argv[0]);
+	printf("%d\n", argc);
 	return (0);
 }

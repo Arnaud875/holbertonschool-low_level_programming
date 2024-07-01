@@ -20,8 +20,14 @@ compile_and_check() {
     if [ $? -eq 0 ]; then
         echo "Betty successfully"
 
-        if [ $2 == "notest" ]; then
-            echo "Compiling file($FILE_PATH)..."
+        if [ "$2" == "notest" ]; then
+            echo "Compiling file($FILE_PATH) without tests..."
+
+            # Compile file
+            gcc -Wall -Werror -Wextra -pedantic -std=gnu89 \
+                "$FILE_PATH" -o output
+
+            ./output 1 10 100 1000
         else
             echo "Compiling test file($TEST_FILE) ..."
 
@@ -70,11 +76,15 @@ push_to_github() {
 }
 
 # Main script logic
-if [ $# -eq 1 ]; then
-    if [ $1 == "all_tests" ]; then
+if [ $# -ge 1 ]; then
+    if [ "$1" == "all_tests" ]; then
         run_all_tests
     else
-        compile_and_check "$1"
+        if [ $# -ge 2 ] && [ "$2" == "notest" ]; then
+            compile_and_check "$1" "notest"
+        else
+            compile_and_check "$1"
+        fi
     fi
 else
     push_to_github
